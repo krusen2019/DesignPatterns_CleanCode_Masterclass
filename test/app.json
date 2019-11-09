@@ -1,6 +1,6 @@
 {
   "id": "251f8b21-a6cd-4799-9228-b7116365dceb",
-  "name": "DesignPatterns_CleanCode_Masterclass Tests", 
+  "name": "DesignPatterns_CleanCode_Masterclass Tests",
   "publisher": "Business Systemhaus AG",
   "version": "1.0.0.0",
   "brief": "NAVTechDays2019 Workshop",
@@ -11,7 +11,10 @@
   "url": "",
   "logo": "",
   "contextSensitiveHelpUrl": "https://DesignPatterns_CleanCode_Masterclass.com/help/",
-  "supportedLocales": ["en-US","de-DE"],
+  "supportedLocales": [
+    "en-US",
+    "de-DE"
+  ],
   "dependencies": [
     {
       "appId": "5d86850b-0d76-4eca-bd7b-951ad998e997",
@@ -66,12 +69,14 @@
   "platform": "15.0.0.0",
   "showMyCode": true,
   "runtime": "4.0",
-  "features": ["TranslationFile"],
+  "features": [
+    "TranslationFile"
+  ],
   "idRanges": [
     {
       "from": 51000,
       "to": 51999
     }
   ],
-    "target": "Cloud"
+  "target": "Cloud"
 }
