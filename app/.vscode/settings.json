@@ -1,0 +1,14 @@
+///*
+{
+    "al.packageCachePath": "./resources",
+    // "al.enableCodeAnalysis": true,
+}
+/*/
+{
+    // For debugging in cloud sandbox
+    "al.packageCachePath": "./resources",
+    // "al.enableCodeAnalysis": true,
+    "al.browser": "Firefox",
+    "al.incognito": true,
+}
+//*/
