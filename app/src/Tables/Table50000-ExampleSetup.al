@@ -33,5 +33,4 @@ table 50000 "Example Setup"
         ExampleSetup.Init();
         ExampleSetup.Insert();
     end;
-
 }

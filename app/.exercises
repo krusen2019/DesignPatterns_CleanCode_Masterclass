@@ -1,0 +1,58 @@
+ALExampeExtension
+
+These files are part of my workshop materials and updated from the book Design Patterns for Dynamics NAV.
+
+They are free to download without any waranties or support. Use at your own risk.
+
+(c) Mark Brummel
+
+Exercise 1- Singleton Setup Table
+
+    Create a new table with ID 50000 and name Example Setup using the Singleton Pattern
+    Define field 1 Primary Key as Code 10
+    Define field 2 Example Enabled Boolean
+    Create Card Page 50000 Example Setup a. InsertAllowed = No b. DeleteAllowed = No c. OnOpenPage: RESET; IF NOT GET THEN BEGIN INIT; INSERT; END;
+    Add the creation to Codeunit 2 and see if you can make this upgradable.
+    Add a field to the user setup table Example Enabled (50000/Boolean)
+    Create an Interface Codeunit returning the correct value based on Multi Level Setup
+
+Exercise 2- Master Data Table
+
+    Create a new table with ID 50010 and name Example Person
+    Define field 1 No. as Code 20
+    Define field 2 Name as Text 50
+    Define field 3 Search Name as Code 50
+    Define field 4 Name 2 as Text 50
+    Add C/AL Code in OnValidate of Name field IF ("Search Name" = UPPERCASE(xRec.Name)) OR ("Search Name" = '') THEN "Search Name" := Name;
+    Create cardpage 50010 Example Person Card based on table 50010
+    Create listpage 50011 Example Person List based on table 50010 a. Editable = FALSE b. CardPageId = 50010
+    Repeat the exercise for table 50020 Example Product
+    Implement No. Series
+    Implement Address Integration (In the appropriate Master Data)
+    Add blocked entity field
+    Redesign Address Integration to use an argument table
+    Implement a product sales price table per person using the rules table
+
+Exercise 3 - Journal Template Batch Line
+
+    Import Exercise3.fob and study the objects
+    Add the code to move the fields to the entry table in the Journal Post Line Codeunit
+    Remove the Boat Anchor in Codeunit 50003 Ex. Jnl-Post line
+    Create a new flowfield on the ExamplePerson table to study the automated entry creation by flowfields
+    Create a new Entry table and enable the Autoincrement property. Run the table and see how it generates the unique key
+    Add another field to the same table and enable Autoincrement. Study the results
+    What other options are there to create a unique ID?
+
+Exercise 4 – Document
+
+    Import Exercise4.fob
+    Have a look at the document tables and how they are designed using the document pattern.
+    Refactor the Post Codeunit as a method of the table
+    Implement UI Separation
+    Create the Post Action
+    Import Exercise4a.fob
+    Create a Hook function for the ExamplePostHook Codeunit, use OnAfterTestNear
+    Create an event for the OnAfterTestNear function
+    Import Exercise4b.fob
+    Study the Query on Page object
+    Refactor this on a report

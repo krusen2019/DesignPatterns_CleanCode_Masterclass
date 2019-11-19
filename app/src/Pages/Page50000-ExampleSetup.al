@@ -15,6 +15,7 @@ page 50000 "Example Setup"
         {
             group(General)
             {
+                Caption = 'General';
                 field("Example Enabled"; "Example Enabled")
                 {
                 }
