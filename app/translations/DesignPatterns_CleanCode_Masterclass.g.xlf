@@ -2,7 +2,28 @@
 <xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 xliff-core-1.2-transitional.xsd">
   <file datatype="xml" source-language="en-US" target-language="en-US" original="DesignPatterns_CleanCode_Masterclass">
     <body>
-      <group id="body" />
+      <group id="body">
+        <trans-unit id="Table 4167665601 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Example Setup</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Example Setup - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 4167665601 - Field 1663593181 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Primary Key</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Example Setup - Field Primary Key - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 4167665601 - Field 260824215 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Example Enabled</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Example Setup - Field Example Enabled - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 4167665601 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Example Setup</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Example Setup - Property Caption</note>
+        </trans-unit>
+      </group>
     </body>
   </file>
 </xliff>

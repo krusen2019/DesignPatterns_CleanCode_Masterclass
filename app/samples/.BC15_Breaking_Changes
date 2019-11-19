@@ -1,0 +1,758 @@
+Breaking Changes
+
+...and how to resolve them
+
+In this help document, you will find a list of known breaking changes which were introduced in the latest major release. You will also get help on the changes you need to do to your code to make it compile again against the latest version of the Business Central System Application and Base Application.
+
+Work in progress
+
+The breaking changes are currently being identified. We will update this site with more help on this topic very soon.
+
+Can’t find what you’re looking for?
+
+We’re working hard to make this a comprehensive list, but there’s always a chance that something is missing. If you can’t find what you’re looking for here, we suggest that you engage with other members of the Business Central community on Yammer, or reach out to us on GitHub to let us know.
+
+Modules
+
+Assisted Setup Module
+
+Error: 'Assisted Setup' is inaccessible due to its protection level
+
+Solution: Please use the appropriate API methods in the codeunit 3725 "Assisted Setup".
+
+Error: 'Assisted Setup Icon' is inaccessible due to its protection level
+
+Solution: The table usage has been discontinued as the icons are going to be taken from the extension itself.
+
+Error: 'Table "Assisted Setup"' does not contain a definition for 'SetStatus'
+
+Solution: Function has been discontinued. You may change the status to Complete by calling function Complete on codeunit 3725 "Assisted Setup".
+
+Error: The event 'OnInitialize' is not found in the target"
+
+Solution: Event has been moved to codeunit 3725 "Assisted Setup", function OnRegister.
+
+Error: The event 'OnUpdateAssistedSetupStatus' is not found in the target"
+
+Solution: Event has been moved to codeunit 3725 "Assisted Setup", function OnRegister.
+
+Error: The event 'OnBeforeUpdateAssistedSetupStatus' is not found in the target"
+
+Solution: Event has been removed. You may alternatively use codeunit 3725 "Assisted Setup", function OnRegister.
+
+
+Auto Format Module
+
+Error: Codeunit 'AutoFormatManagement' is missing
+
+Solution: Codeunit has been renamed to codeunit 45 "Auto Format".
+
+Error: 'Codeunit "Auto Format"' does not contain a definition for 'AutoFormatTranslate'
+
+Solution: The procedure AutoFormatTranslate has been renamed to ResolveAutoFormat. The procedure has also been refactored but the behavior is unchanged:
+•The parameter AutoFormatType: Enum Auto Format replaces the parameter AutoFormatType: Integer.
+•The logic for cases other than 0 (Enum DefaultFormat) and 11 (Enum CustomFormatExpr) has been moved to Base Application.
+
+Error: OnResolveAutoFormat has scope OnPrem
+
+Solution: The publisher OnResolveAutoFormat has the scope OnPrem, but everyone can subscribe to it and implement a new logic for formatting decimal numbers in text messages.
+
+
+Azure AD Plan Module
+
+Error: 'User Plan' is inaccessible due to its protection level
+
+Solution: OnPrem: access the table through the facade APIs, codeunit 9016 "Azure AD Plan", or using the query 774 "Users in Plans". SaaS: access the table using the query 774 "Users in Plans".
+
+Error: 'Plan' is inaccessible due to its protection level
+
+Solution: Access the table through the facade APIs, codeunit 9016 "Azure AD Plan", or using the query 775 Plan.
+
+
+Azure AD Tenant Module
+
+Error: Codeunit 'Tenant Management' is missing
+
+Solution: Codeunit was split into codeunit 417 "Tenant Settings" and codeunit 457 "Environment Information" and codeunit 433 "Azure AD Tenant".
+
+Error: 'Codeunit "Identity Management"' does not contain a definition for 'GetAadTenantId'
+
+Solution: Function has been moved to codeunit 433 "Azure AD Tenant", function GetAadTenantId.
+
+Error: 'Codeunit "Tenant Management"' does not contain a definition for 'GetAadTenantId'
+
+Solution: Function has been moved to codeunit 433 "Azure AD Tenant", function GetAadTenantId.
+
+Error: 'Codeunit "Tenant Management"' does not contain a definition for 'GetAadTenantDomainName'
+
+Solution: Function has been moved to codeunit 433 "Azure AD Tenant", function GetAadTenantDomainName.
+
+Error: 'Codeunit "Tenant Management"' does not contain a definition for 'IsSandbox'
+
+Solution: Function has been moved to codeunit 457 "Environment Information", function IsSandbox.
+
+
+Base64 Convert Module
+
+Error: 'Codeunit "Type Helper"' does not contain a definition for 'ConvertValueFromBase64'
+
+Solution: Function has been moved to codeunit 4110 "Base64 Convert", function FromBase64.
+
+Error: 'Codeunit "Type Helper"' does not contain a definition for 'ConvertValueToBase64'
+
+Solution: Function has been moved to codeunit 4110 "Base64 Convert", function ToBase64.
+
+
+BLOB Storage Module
+
+Error: Argument 1: cannot convert from 'Record TempBlob' to 'var Codeunit "Temp Blob"'
+
+Solution: Use codeunit 4100 "Temp Blob" API instead of the record API.
+
+Error: 'Codeunit "Temp Blob"' does not contain a definition for 'ToBase64String'
+
+Solution: Function has been moved to codeunit 4110 "Base64 Convert" function ToBase64.
+
+Error: 'Codeunit "Temp Blob"' does not contain a definition for 'FromBase64String'
+
+Solution: Function has been moved to codeunit 4110 "Base64 Convert" function FromBase64.
+
+Error: 'Codeunit "Temp Blob"' does not contain a definition for 'WriteAsText'
+
+Solution: Function has been removed. Replacement:
+TempBlob.CreateOutStream(OutStream);
+OutStream.WriteText(Text);
+
+
+Error: 'Codeunit "Temp Blob"' does not contain a definition for 'ReadAsText'
+
+Solution: Function has been removed. Replacement:
+TempBlob.CreateInStream(InStream);
+Result := InStream.ReadText;
+
+
+Error: 'Codeunit "Temp Blob"' does not contain a definition for 'ReadAsTextWithCRLFLineSeparator'
+
+Solution: Function has been moved to Codeunit 10 "Type Helper" function ReadAsTextWithSeparator.
+
+Error: 'Codeunit "Temp Blob"' does not contain a definition for 'StartReadingTextLines'
+
+Solution: Function has been removed. Replacement get the InStream and use the ReadText function.
+
+Error: 'Codeunit "Temp Blob"' does not contain a definition for 'StartWritingTextLines'
+
+Solution: Function has been removed. Replacement get the OutStream and use the WriteText function.
+
+Error: 'Codeunit "Temp Blob"' does not contain a definition for 'MoreTextLines'
+
+Solution: Function has been removed. Replacement use the function EOS from InStream.
+
+Error: 'Codeunit "Temp Blob"' does not contain a definition for 'WriteTextLine'
+
+Solution: Function has been removed. Replacement:
+TempBlob.CreateOutStream(OutStream);
+OutStream.WriteText(Text);
+
+
+Error: 'Codeunit "Temp Blob"' does not contain a definition for 'ReadTextLine'
+
+Solution: Function has been removed. Replacement:
+TempBlob.CreateInStream(InStream);
+Result := InStream.ReadText;
+
+
+Error: 'Codeunit "Temp Blob"' does not contain a definition for 'GetHTMLImgSrc'
+
+Solution: Function has been moved to codeunit 4112 "Image Helpers" function GetHTMLImgSrc.
+
+Error: 'Codeunit "Temp Blob"' does not contain a definition for 'GetImageType'
+
+Solution: Function has been moved to codeunit 4112 "Image Helpers" function GetImageType.
+
+Error: 'Codeunit "Temp Blob"' does not contain a definition for 'GetXMLAsText'
+
+Solution: Function has been removed. Replacement:
+TempBlob.CreateInStream(InStream);
+Xml := XmlDocument.Create(Instream);
+Xml.WriteTo(Text);
+
+
+Error: 'Codeunit "Temp Blob"' does not contain a definition for 'TryDownloadFromUrl'
+
+Solution: Function has been removed. Replacement:
+HttClient.Get(url, HttpResponseMessage);
+HttpResponseMessage.Content.ReadAs(InStream);
+TempBlob.CreateOutStream(OutStream);
+CopyStream(OutStream, InStream);
+
+
+
+Caption Class Module
+
+Error: 'Codeunit' does not contain a definition for 'CaptionManagement'
+
+Solution: Events have been moved to codeunit 42 "Caption Class".
+
+Error: The event 'OnAfterCaptionClassTranslate' is not found in the target
+
+Solution: Event has been moved to codeunit 42 "Caption Class", function OnAfterCaptionClassResolve.
+
+
+Client Type Management Module
+
+Error: Codeunit 'ClientTypeManagement' is missing Error: Codeunit '4' is missing
+
+Solution: Codeunit has been renamed to codeunit 4030 "Client Type Management".
+
+
+Cryptography Management Module
+
+Error: Codeunit 'Encryption Management' is missing
+
+Solution: Codeunit has been renamed to codeunit 1266 "Cryptography Management".
+
+Error: 'Codeunit "Encryption Management"' does not contain a definition for 'GenerateKeyedHash'
+
+Solution: Function has been moved to codeunit 1266 "Cryptography Management", function GenerateHash.
+
+Error: The event 'OnBeforeEncryptDataInAllCompaniesOnPrem' is not found in the target"
+
+Solution: Use the event OnBeforeEnableEncryptionOnPrem instead.
+
+Error: The event 'OnBeforeDecryptDataInAllCompaniesOnPrem' is not found in the target"
+
+Solution: Use the event OnBeforeDisableEncryptionOnPrem instead.
+
+
+Cues and KPIs Module
+
+Error: 'Cue Setup' is inaccessible due to its protection level
+
+Solution: Access the table through the facade APIs, codeunit 9701 "Cues And KPIs".
+
+Error: Codeunit 'Cue Setup' is missing
+
+Solution: Codeunit has been renamed to codeunit 9701 "Cues And KPIs".
+
+
+Data Compression Module
+
+Error: Codeunit 'Zip Stream Wrapper' is missing
+
+Solution: Codeunit has been renamed to codeunit 425 "Data Compression".
+
+Error: 'Codeunit "File Management"' does not contain a definition for 'AddStreamToZipStream'
+
+Solution: Function has been moved to codeunit 425 "Data Compression", function AddEntry.
+
+Error 'Codeunit "Zip Stream Wrapper"' does not contain a definition for 'UploadZip'
+
+Solution: Function has been removed. Replacement:
+UploadIntoStream('', '', '*.*', '', InStream);
+DataCompression.OpenZipArchive(InStream, OpenForUpdate);
+
+
+Error 'Codeunit "Zip Stream Wrapper"' does not contain a definition for 'OpenZipFromTempBlob'
+
+Solution: Function has been moved to codeunit 425 "Data Compression", function OpenZipArchive.
+
+Error 'Codeunit "Zip Stream Wrapper"' does not contain a definition for 'DownloadZip'
+
+Solution: Function has been removed. Replacement:
+DataCompression.SaveZipArchive(TempBlob);
+TempBlob.CreateInStream(InStream);
+DownloadFromStream(InStream, '', '', '', OutputFileName);
+
+
+Error 'Codeunit "Zip Stream Wrapper"' does not contain a definition for 'SaveZipToTempBlob'
+
+Solution: Function has been moved to codeunit 425 "Data Compression", function SaveZipArchive.
+
+
+Environment Information Module
+
+Error: 'Codeunit "Permission Manager"' does not contain a definition for 'SoftwareAsAService'
+
+Solution: Function has been moved to codeunit 457 "Environment Information", function IsSaaS.
+
+Error: 'Codeunit "Permission Manager"' does not contain a definition for 'IsSandboxConfiguration'
+
+Solution: Function has been moved to codeunit 457 "Environment Information", function IsSandbox.
+
+Error: 'Codeunit "Tenant Settings"' does not contain a definition for 'IsSandbox'
+
+Solution: Function has been moved to codeunit 457 "Environment Information", function IsSandbox.
+
+Error: 'Codeunit "Tenant Information"' does not contain a definition for 'GetPlatformVersion'
+
+Solution: The function a very technical term about the platform build number used internally by MS. Please use the alternate methods available in either codeunit 417 "Tenant Information" or codeunit 457 "Environment Information".
+
+
+Extension Management Module
+
+Error: 'Extension Installation Impl' is inaccessible due to its protection level
+Error: Codeunit 'NavExtensionInstallationMgmt' is missing
+
+Solution: Access the codeunit through the facade APIs, codeunit 2504 "Extension Management".
+
+Error: 'Extension Management' does not contain a definition for 'GetLatestVersionPackageId'
+
+Solution: Function has been renamed to function GetLatestVersionPackageIdByAppId.
+
+Error: 'Extension Management' does not contain a definition for 'InstallNavExtension'
+
+Solution: Function has been renamed to function InstallExtension. Notice additional parameter IsUIEnabled that indicates whether the install operation is invoked through the UI.
+
+
+Field Selection Module
+
+Error: Page 'Field List' is missing"
+Error: Page 'Table Field List' is missing
+Error: Page '"Fields"' is missing"
+
+Solution: Access the page through the facade APIs, codeunit 9806 "Field Selection".
+
+
+Filter Tokens Module
+
+Error: Codeunit 'TextManagement' is missing
+Error: 'Codeunit' does not contain a definition for 'TextManagement'
+
+Solution: Codeunit has been renamed to codeunit 41 "Filter Tokens".
+
+Error: The event 'OnBeforeMakeTextFilter' is not found in the target"
+
+Solution: Use the event OnResolveTextFilterToken instead.
+
+Error: The event 'OnAfterMakeTextFilter' is not found in the target"
+
+Solution: Use the event OnResolveTextFilterToken instead.
+
+Error: The event 'OnAfterMakeDateTimeFilter' is not found in the target"
+
+Solution: Use the events OnResolveTimeTokenFromDateTimeFilter and OnResolveDateTokenFromDateTimeFilter instead.
+
+Error: The event 'OnAfterMakeDateFilter' is not found in the target"
+
+Solution: Use the event OnResolveDateFilterToken instead.
+
+Error: The event 'OnAfterMakeTimeFilter' is not found in the target"
+
+Solution: Use the event OnResolveTimeFilterToken instead.
+
+
+Headlines Module
+
+Error: Codeunit 'Headline Management' is missing
+
+Solution: Codeunit has been renamed to codeunit 1439 Headlines.
+
+
+Language Module
+
+Error: Codeunit 'LanguageManagement' is missing
+
+Solution: Codeunit was renamed to codeunit 43 Language.
+
+Error: 'Codeunit "LanguageManagement"' does not contain a definition for 'ApplicationLanguage'
+
+Solution: Function has been replaced by GetDefaultApplicationLanguageId in codeunit 43 Language.
+
+Error: 'Codeunit "LanguageManagement"' does not contain a definition for 'LookupApplicationLanguage'
+
+Solution: Function has been replaced by LookupApplicationLanguageId in codeunit 43 Language.
+
+Error: 'Record Language' does not contain a definition for 'GetUserLanguage'
+
+Solution: Function has been moved to codeunit 43 Language, function GetUserLanguageCode.
+
+Error: 'Record Language' does not contain a definition for 'GetLanguageID'
+
+Solution: Function has been moved to codeunit 43 Language, function GetLanguageId. If empty language code could be expected, use GetLanguageIdOrDefault instead.
+
+Error: 'Codeunit Language' does not contain a definition for 'TryGetCultureName'
+
+Solution: Function has been removed. The replacement:
+[TryFunction]
+procedure TryGetCultureName(Culture : Integer; VAR CultureName : Text)
+var
+    DotNet_CultureInfo: Codeunit DotNet_CultureInfo;
+begin
+    DotNet_CultureInfo.GetCultureInfoByName(Culture);
+    CultureName := DotNet_CultureInfo.Name();
+end;
+
+
+
+Manual Setup Module
+
+Error: 'Business Setup Icon' is inaccessible due to its protection level
+
+Solution: Access the table through the facade APIs, codeunit 1875 "Manual Setup".
+
+Error: Page '"Business Setup"' is missing
+
+Solution: Page has been renamed to page 1875 "Manual Setup".
+
+Error: The event 'OnRegisterBusinessSetup' is not found in the target"
+
+Solution: Event has been moved to codeunit 1875 "Manual Setup", function OnRegisterManualSetup.
+
+
+Password Dialog Module
+
+Error: The target Page "Set Password" for the extension object is not found
+Error: The target Page "Change Password" for the extension object is not found
+
+Solution: Page has been renamed to page 9810 "Password Dialog", but is not extensible.
+
+
+Record Link Management Module
+
+Error: 'Codeunit "Type Helper"' does not contain a definition for 'WriteRecordLinkNote'
+
+Solution: Function has been moved to codeunit 447 "Record Link Management", function WriteNote.
+
+Error: 'Codeunit "Type Helper"' does not contain a definition for 'ReadRecordLinkNote'
+
+Solution: Function has been moved to codeunit 447 "Record Link Management", function ReadNote.
+
+
+Satisfaction Survey Module
+
+Error: 'Net Promoter Score' is inaccessible due to its protection level Error: 'Net Promoter Score Setup' is inaccessible due to its protection level
+
+Solution: Table is neither customizable nor accessible.
+
+Error: The target Page "Net Promoter Score Setup" for the extension object is not found
+
+Solution: Page is neither customizable nor accessible.
+
+
+Server Settings Module
+
+Error: Codeunit 'Server Config. Setting Handler' is missing
+
+Solution: Codeunit has been renamed to codeunit 6723 "Server Setting".
+
+
+System Initialization Module
+
+Error: Codeunit 'Logon Management' is missing\
+
+Solution: Codeunit has been renamed to codeunit 150 "System Initialization".
+
+Error: 'Codeunit "System Initialization"' does not contain a definition for 'IsLogonInProgress'\
+
+Solution: Function has been moved to codeunit 150 "System Initialization", function IsInProgress.
+
+Error: 'Codeunit "System Initialization"' does not contain a definition for 'SetLogonInProgress'
+
+Solution: Function has been removed.
+
+
+Upgrade Tags Module
+
+Error: Codeunit 'Upgrade Tag Mgt' is missing
+
+Solution: Codeunit has been renamed to codeunit 9999 "Upgrade Tag".
+
+
+User Login Times Module
+
+Error: 'Codeunit "Permission Manager"' does not contain a definition for 'IsFirstLogin'
+
+Solution: Function has been moved to codeunit 9026 "User Login Time Tracker", function IsFirstLogin.
+
+Error: 'Table "User Login"' does not contain a definition for 'UserLoggedInAtOrAfter'
+
+Solution: Function has been moved to codeunit 9026 "User Login Time Tracker", function UserLoggedInSinceDateTime.
+
+
+User Permissions Module
+
+Error: 'Codeunit "Permission Manager"' does not contain a definition for 'IsSuper'
+
+Solution: Function has been moved to codeunit 152 "User Permissions", function IsSuper.
+
+
+User Selection Module
+
+Error: 'Codeunit "User Management"' does not contain a definition for 'ValidateUserID'
+
+Solution: Function has been moved to codeunit 9843 "User Selection", function ValidateUserName.
+
+Error: 'Codeunit "User Management"' does not contain a definition for 'LookupUserID'
+
+Solution: Function has been removed. Reason: the TableRelation property enables lookup logic on platform level.
+
+Design details The TableRelation property makes onLookup trigger redundant. However the ValidateTableRelation property requires validation logic in OnValidate trigger.
+field(1; "User ID"; Code[50])
+{
+    Caption = 'User ID';
+    DataClassification = EndUserIdentifiableInformation;
+    NotBlank = true;
+    TableRelation = User."User Name";
+    ValidateTableRelation = false;
+
+    trigger OnValidate()
+    var
+        UserSelection: Codeunit "User Selection";
+    begin
+        UserSelection.ValidateUserName("User ID");
+    end;
+}
+
+
+If you want to enable DrillDown for non-editable page, you need to use DisplayUserInformation from Codeunit "User Management"
+field("User ID"; "User ID")
+{
+    ApplicationArea = Jobs;
+    ToolTip = 'Specifies the ID of the user who posted the entry, to be used, for example, in the change log.';
+
+    trigger OnDrillDown()
+    var
+        UserMgt: Codeunit "User Management";
+    begin
+        UserMgt.DisplayUserInformation("User ID");
+    end;
+} 
+
+
+If you prefer platform support vote for the https://experience.dynamics.com/ideas/idea/?ideaid=4075b3be-5ba8-e811-b96f-0003ff68a2af.
+
+
+Video Module
+
+Error: 'Product Video Buffer' is inaccessible due to its protection level
+Error: 'SetURL(Text)' is inaccessible due to its protection level
+
+Solution: Access the table through the facade APIs, codeunit 3710 Video.
+
+Error: Page 'Video Player Page' is missing
+
+Solution: Access the page through the facade APIs, codeunit 3710 Video, function Play.
+
+
+Base Application
+
+Error: GlobalVarAccess in Event Publisher is set to false
+
+Solution: We do not set GlobalVarAccess anymore, as this property will be discontinued in the next major release of AL. We have set this property to false everywhere, but are ready to respond to requests here on GitHub to add additional events/parameters to mitigate this issue immediately.
+
+Error: 'Codeunit' does not contain a definition for 'Headline RC Order Processor'
+Error: 'Codeunit' does not contain a definition for 'Headline RC Accountant'
+Error: 'Codeunit' does not contain a definition for 'Headline RC Business Manager'
+Error: 'Codeunit' does not contain a definition for 'Headline RC Administrator'
+Error: 'Codeunit' does not contain a definition for 'Headline RC Team Member'
+Error: 'Codeunit' does not contain a definition for 'Headline RC Project Manager'
+Error: 'Codeunit' does not contain a definition for 'Headline RC Relationship Mgt.'
+Error: 'Codeunit' does not contain a definition for 'Headline RC Prod. Planner'
+Error: 'Codeunit' does not contain a definition for 'Headline RC Serv. Dispatcher'
+Error: Codeunit 'Headline RC Business Manager' is missing
+
+Solution: Codeunits were combined into codeunit 1441 "RC Headlines Executor".
+
+Error: Table 'Headline RC Business Manager' is removed. Reason: Replaced with "RC Headlines User Data" table
+Error: Table 'Headline RC Prod. Planner' is removed. Reason: Replaced with "RC Headlines User Data" table
+Error: Table 'Headline RC Serv. Dispatcher' is removed. Reason: Replaced with "RC Headlines User Data" table
+Error: Table 'Headline RC Administrator' is removed. Reason: Replaced with "RC Headlines User Data" table
+Error: Table 'Headline RC Team Member' is removed. Reason: Replaced with "RC Headlines User Data" table
+Error: Table 'Headline RC Project Manager' is removed. Reason: Replaced with "RC Headlines User Data" table
+Error: Table 'Headline RC Relationship Mgt.' is removed. Reason: Replaced with "RC Headlines User Data" table
+Error: Table 'Headline RC Order Processor' is removed. Reason: Replaced with "RC Headlines User Data" table
+Error: Table 'Headline RC Accountant' is removed. Reason: Replaced with "RC Headlines User Data" table
+
+Solution: Tables were combined into table 1458 "RC Headlines User Data".
+
+Error: The event 'OnIsAnyExtensionHeadlineVisible' is not found in the target
+
+Solution: Event has been moved to codeunit 1440 "RC Headlines Page Common", function OnIsAnyExtensionHeadlineVisible.
+
+Error: 'Codeunit "Identity Management"' does not contain a definition for 'IsInvAppId'
+
+Solution: Function has been moved to codeunit 9995 "Env. Info Proxy", function IsInvoicing.
+
+Error: 'Codeunit "Conf./Personalization Mgt."' does not contain a definition for 'GetCurrentProfileIDNoError'
+
+Solution: Profiles are no longer uniquely identified by their ID: use 'GetCurrentProfileNoError(var AllProfile: Record "All Profile")' instead.
+
+Error: 'Codeunit "Conf./Personalization Mgt."' does not contain a definition for 'ExportProfilesInZipFile'
+Error: 'Codeunit "Conf./Personalization Mgt."' does not contain a definition for 'ExportProfiles'
+Error: 'Codeunit "Conf./Personalization Mgt."' does not contain a definition for 'ImportProfiles'
+
+Solution: Export the profiles in the AL format using DownloadProfileConfigurationPackage instead.
+
+Error: 'Codeunit "Conf./Personalization Mgt."' does not contain a definition for 'InsertProfile'
+Error: 'Codeunit "Conf./Personalization Mgt."' does not contain a definition for 'InitializeProfiles'
+Error: The event 'OnInitializeProfiles' is not found in the target
+
+Solution: Use the Profile objects built into the AL language instead.
+
+Error: 'Codeunit "Conf./Personalization Mgt."' does not contain a definition for 'ImportTranslatedResources'
+Error: 'Codeunit "Conf./Personalization Mgt."' does not contain a definition for 'ImportTranslatedResourcesWithFolderSelection'
+Error: 'Codeunit "Conf./Personalization Mgt."' does not contain a definition for 'ExportTranslatedResources'
+Error: 'Codeunit "Conf./Personalization Mgt."' does not contain a definition for 'ExportTranslatedResourcesWithFolderSelection'
+Error: 'Codeunit "Conf./Personalization Mgt."' does not contain a definition for 'RemoveTranslatedResources'
+Error: 'Codeunit "Conf./Personalization Mgt."' does not contain a definition for 'RemoveTranslatedResourcesWithLanguageSelection'
+Error: The event 'OnTranslateProfileID' is not found in the target
+
+Solution: Use the CaptionML and ProfileDescriptionML properties in the Profile AL objects to translate the profile, and Page Customization AL objects for other translations.
+
+Error: The event 'OnGetBuiltInRoleCenterFilter' is not found in the target
+
+Solution: Mark the profiles as AllProfile.Enabled := false to hide it from the profile selection, or subscribe to the Page Trigger Events to hide the profile from specific pages.
+
+Error: 'Codeunit "Type Helper"' does not contain a definition for 'RegexReplace'
+
+Solution: Function has been removed. The alternative is in codeunit 3001 DotNet_Regex, function Replace.
+
+Error: 'Codeunit "Type Helper"' does not contain a definition for 'RegexReplaceIgnoreCase'\
+
+Solution: Function has been removed. The replacement:
+procedure RegexReplaceIgnoreCase(Input : Text; Pattern : Text; Replacement : Text)
+var
+    DotNet_Regex: Codeunit DotNet_Regex;
+begin
+    DotNet_Regex.RegexIgnoreCase(Pattern);
+    DotNet_Regex.Replace(Input, Replacement);
+end;
+
+
+Error: 'Codeunit "Type Helper"' does not contain a definition for 'IsMatch'
+
+Solution: Function has been removed. The alternative is in codeunit 3001 DotNet_Regex, function IsMatch.
+
+Error: 'Codeunit "Type Helper"' does not contain a definition for 'IsAsciiLetter'
+
+Solution: Function has been removed. The alternative is in codeunit 3001 DotNet_Regex, function IsAsciiLetter.
+
+Error: 'Codeunit "Type Helper"' does not contain a definition for 'IsAlphanumeric'
+
+Solution: Function has been removed. The alternative is in codeunit 3001 DotNet_Regex, function IsAlphanumeric.
+
+Error: 'Codeunit "Type Helper"' does not contain a definition for 'TextEndsWith'
+
+Solution: Function has been removed. The alternative is in codeunit 3001 DotNet_Regex, function TextEndsWith.
+
+Error: Codeunit "Item Tracking Management" does not contain a definition for 'CopyItemTracking2'
+
+Solution: Function is now an overload, function CopyItemTracking.
+
+Error: 'Codeunit "Sales-Post Prepayments"' does not contain a definition for 'BuildInvLineBuffer2'
+Error: 'Codeunit "Purchase-Post Prepayments"' does not contain a definition for 'BuildInvLineBuffer2'
+
+Solution: Function is now an overload, function BuildInvLineBuffer.
+
+Error: 'Codeunit DimensionManagement' does not contain a definition for 'EditDimensionSet2'
+
+Solution: Function is now an overload, function EditDimensionSet.
+
+Error: The event 'OnMoveGenJournalLine' is not found in the target
+
+Solution: Event has been moved to codeunit 12 "Gen. Jnl.-Post Line", function OnMoveGenJournalLine.
+
+Error: Table 'Cortana Intelligence Usage' is removed. Reason: Renamed to Azure AI Usage
+
+Solution: Table has been renamed to table 2004 "Azure AI Usage".
+
+Error: Table 'Cortana Intelligence' is removed. Reason: Renamed to Cash Flow Azure AI Buffer
+
+Solution: Table has been renamed to table 852 "Cash Flow Azure AI Buffer".
+
+Error: 'Codeunit "CalendarManagement"' is missing'
+
+Solution: Codeunit was renamed to Shop Calendar Management.
+
+Error: 'Codeunit "Calendar Management"' does not contain a definition for 'CheckCustomizedDateStatus'
+
+Solution: Function has been replaced, function IsNonworkingDay.
+
+Error: 'Codeunit "Calendar Management"' does not contain a definition for 'CustomizedCalendarExistText'
+
+Solution: Function has been removed. Replacement function call Format(CalendarMgmt.CustomizedChangesExist(Rec)).
+
+Error: No overload for method CalendarMgt.'CustomizedChangesExist' takes 4 arguments
+
+Solution: Function parameters have changed. It now takes a variant record parameter.
+
+Error: No overload for method CalendarMgt.'CheckDateStatus' takes 3 arguments
+
+Solution: Function parameters have changed. It now takes a "Customized Calendar Change" record parameter.
+
+Error: 'Codeunit "SMTP Mail"' does not contain a definition for 'TrySend'
+
+Solution: Function has been renamed, function Send. If you were using Send before, that has been renamed to SendShowError.
+
+Error: SMTPMail.AddRecipients parameter cannot convert from 'Text' to 'List of [Text]'
+Error: SMTPMail.AddCC parameter cannot convert from 'Text' to 'List of [Text]'
+Error: SMTPMail.AddBCC parameter cannot convert from 'Text' to 'List of [Text]'
+
+Solution: Create a List of [Text] with the recipient(s).
+procedure Adding()
+var
+    Recipients: List of [Text];
+begin
+    Recipients.Add('Email');
+    SMTPMail.AddRecipients(Recipients);
+end;
+
+
+
+Removed Functionality
+
+Error: 'Codeunit "Type Helper"' does not contain a definition for 'GetBlobString'
+Error: 'Codeunit "Type Helper"' does not contain a definition for 'SetBlobString'
+Error: 'Codeunit "Type Helper"' does not contain a definition for 'ReadBlob'
+Error: 'Codeunit "Type Helper"' does not contain a definition for 'ReadTextBlob'
+Error: 'Codeunit "Type Helper"' does not contain a definition for 'WriteBlobWithEncoding'
+Error: 'Codeunit "Type Helper"' does not contain a definition for 'WriteBlob'
+Error: 'Codeunit "Type Helper"' does not contain a definition for 'WriteTextToBlobIfChanged'
+Error: 'Codeunit "Type Helper"' does not contain a definition for 'ReadTextBlobWithEncoding'
+Error: 'Codeunit "Type Helper"' does not contain a definition for 'ReadTextBlobWithTextEncoding'
+
+Solution: Use stream functions directly.
+
+Error: 'Codeunit "Type Helper"' does not contain a definition for 'TryConvertWordBlobToPdf'
+Error: 'Codeunit "Type Helper"' does not contain a definition for 'FindFields'
+Error: 'Codeunit "Type Helper"' does not contain a definition for 'Equals'
+Error: 'Codeunit "Type Helper"' does not contain a definition for 'AddMinutesToDateTime'
+
+Solution: Function has been removed.
+
+Error: 'Codeunit "File Management"' does not contain a definition for 'IsWebClient'
+
+Solution: Use ClientType options directly.
+
+Error: Record "Job Queue Log Entry" does not contain a definition for 'GetErrorMessage'
+
+Solution: Use the "Error Message" field directly.
+
+Error: The object Page '%1' is not extensible
+
+Solution: If you need to extend a page, contact us through Yammer or GitHub. Include the use case, and we will decide whether to open things up for it.
+
+Error: The control '%1' is not found in the target
+
+Solution: The anchor control has been renamed or deleted. Update or change to a new anchor.
+
+Error: The action '%1' is not found in the target
+
+Solution: The anchor action has been renamed or deleted. Update or change to a new action.
+
+Error: The event 'OnOpenBusinessSetupPage' is not found in the target Error: The event 'OnInitializeProfiles' is not found in the target
+
+Solution: Event has been removed.
+
+Error: Table 'Service Password' is removed. Reason: The suggested way to store the secrets is Isolated Storage, therefore Service Password will be removed.
+Error: Table 'Encrypted Key/Value' is removed. Reason: The suggested way to store the secrets is Isolated Storage, therefore Encrypted Key/Value will be removed.
+
+Solution: Table has been removed. Secrets should now be stored using Isolated Storage. Read more about Changes in Secret Management.
+
+Error: Codeunit 'Getting Started Mgt.' is missing
+
+Solution: Codeunit has been removed.
+
+Error: '"System Indicator"' does not contain a definition for 'Company+Database'
+
+Solution: Option has been removed. You may use the 'Custom' option and include 4 characters in "Custom System Indicator Text".
