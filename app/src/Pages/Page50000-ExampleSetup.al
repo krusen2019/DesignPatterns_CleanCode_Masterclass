@@ -18,6 +18,19 @@ page 50000 "Example Setup"
                 Caption = 'General';
                 field("Example Enabled"; "Example Enabled")
                 {
+                    ApplicationArea = All;
+                }
+            }
+            group(Numbering)
+            {
+                Caption = 'Numbering';
+                field("Example Person Nos."; "Example Person Nos.")
+                {
+                    ApplicationArea = All;
+                }
+                field("Example Product Nos."; "Example Product Nos.")
+                {
+                    ApplicationArea = All;
                 }
             }
         }

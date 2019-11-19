@@ -15,7 +15,20 @@ table 50000 "Example Setup"
             Caption = 'Example Enabled';
             DataClassification = ToBeClassified;
         }
+        field(11; "Example Person Nos."; Code[20])
+        {
+            Caption = 'Example Person Nos.';
+            TableRelation = "No. Series";
+            DataClassification = ToBeClassified;
+        }
+        field(12; "Example Product Nos."; Code[20])
+        {
+            Caption = 'Example Product Nos.';
+            TableRelation = "No. Series";
+            DataClassification = ToBeClassified;
+        }
     }
+
     keys
     {
         key(PK; "Primary Key")

@@ -18,6 +18,16 @@
           <target>Beispiel aktiviert</target>
           <note from="Xliff Generator" annotates="general" priority="3">Table Example Setup - Field Example Enabled - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Table 4167665601 - Field 2029636339 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Example Person Nos.</source>
+          <target>Beispielpersonennummern</target>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Example Setup - Field Example Person Nos. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 4167665601 - Field 110680337 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Example Product Nos.</source>
+          <target>Beispielproduktnummern</target>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Example Setup - Field Example Product Nos. - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Page 4167665601 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Example Setup</source>
           <target>Beispieleinrichtung</target>
@@ -27,6 +37,251 @@
           <source>General</source>
           <target>Allgemein</target>
           <note from="Xliff Generator" annotates="general" priority="3">Page Example Setup - Control General - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 4167665601 - Control 1532816877 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Numbering</source>
+          <target>Nummerierung</target>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Example Setup - Control Numbering - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2964930322 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Address Arguments</source>
+          <target>Addressargumente</target>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Address Arguments - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2964930322 - Field 1663593181 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Primary Key</source>
+          <target>Primärschlüssel</target>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Address Arguments - Field Primary Key - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2964930322 - Field 2961552353 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Name</source>
+          <target>Name</target>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Address Arguments - Field Name - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2964930322 - Field 966287263 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Name 2</source>
+          <target>Name 2</target>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Address Arguments - Field Name 2 - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2964930322 - Field 3168444338 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Address</source>
+          <target>Adresse</target>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Address Arguments - Field Address - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2964930322 - Field 2306852000 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Address 2</source>
+          <target>Adresse 2</target>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Address Arguments - Field Address 2 - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2964930322 - Field 3660300303 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Post Code</source>
+          <target>PLZ-Code</target>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Address Arguments - Field Post Code - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2964930322 - Field 714791889 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>City</source>
+          <target>Ort</target>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Address Arguments - Field City - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2964930322 - Field 284764054 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Country/Region Code</source>
+          <target>Länder-/Regionscode</target>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Address Arguments - Field Country/Region Code - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2964930322 - Field 499448942 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>County</source>
+          <target>Bundesregion</target>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Address Arguments - Field County - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2964930322 - Field 3993128796 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Contact</source>
+          <target>Kontakt</target>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Address Arguments - Field Contact - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3204803135 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Example Person</source>
+          <target>Beispielperson</target>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Example Person - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3204803135 - Field 4200184881 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>No.</source>
+          <target>Nr.</target>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Example Person - Field No. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3204803135 - Field 2961552353 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Name</source>
+          <target>Name</target>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Example Person - Field Name - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3204803135 - Field 411528779 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Search Name</source>
+          <target>Suchbegriff</target>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Example Person - Field Search Name - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3204803135 - Field 966287263 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Name 2</source>
+          <target>Name 2</target>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Example Person - Field Name 2 - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3204803135 - Field 3168444338 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Address</source>
+          <target>Adresse</target>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Example Person - Field Address - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3204803135 - Field 2306852000 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Address 2</source>
+          <target>Adresse 2</target>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Example Person - Field Address 2 - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3204803135 - Field 714791889 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>City</source>
+          <target>Ort</target>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Example Person - Field City - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3204803135 - Field 3993128796 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Contact</source>
+          <target>Kontakt</target>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Example Person - Field Contact - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3204803135 - Field 3660300303 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Post Code</source>
+          <target>PLZ-Code</target>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Example Person - Field Post Code - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3204803135 - Field 284764054 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Country/Region Code</source>
+          <target>Länder-/Regionscode</target>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Example Person - Field Country/Region Code - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3204803135 - Field 499448942 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>County</source>
+          <target>Bundesregion</target>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Example Person - Field County - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3204803135 - Field 3543129988 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Blocked</source>
+          <target>Gesperrt</target>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Example Person - Field Blocked - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3204803135 - Field 1351594800 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>No. Series</source>
+          <target>Nummernserie</target>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Example Person - Field No. Series - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 575058549 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Example Product</source>
+          <target>Beispielprodukt</target>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Example Product - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 575058549 - Field 4200184881 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>No.</source>
+          <target>Nr.</target>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Example Product - Field No. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 575058549 - Field 3461834954 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Description</source>
+          <target>Beschreibung</target>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Example Product - Field Description - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 575058549 - Field 1180181476 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Search Description</source>
+          <target>Suchbegriff</target>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Example Product - Field Search Description - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 575058549 - Field 47657272 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Description 2</source>
+          <target>Beschreibung 2</target>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Example Product - Field Description 2 - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 575058549 - Field 3543129988 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Blocked</source>
+          <target>Gesperrt</target>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Example Product - Field Blocked - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 575058549 - Field 1351594800 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>No. Series</source>
+          <target>Nummernserie</target>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Example Product - Field No. Series - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1398115010 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Product Sales Price</source>
+          <target>Produktpersonenpreis</target>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Product Sales Price - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1398115010 - Field 820558008 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Example Product No.</source>
+          <target>Beispielproduktnr.</target>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Product Sales Price - Field Example Product No. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1398115010 - Field 3829737998 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Example Person No.</source>
+          <target>Beispielpersonennr.</target>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Product Sales Price - Field Example Person No. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1398115010 - Field 1708449288 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Unit Price (LCY)</source>
+          <target>VK-Preis (MW)</target>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Product Sales Price - Field Unit Price (LCY) - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 1144004219 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Example Person Card</source>
+          <target>Beispielpersonenkarte</target>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Example Person Card - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 1144004219 - Control 2445482498 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>General</source>
+          <target>Allgemein</target>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Example Person Card - Control General - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 1144004219 - Control 2942704621 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Address</source>
+          <target>Adresse</target>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Example Person Card - Control PersonAddress - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 1144004219 - Action 2411180066 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Product Sales Price</source>
+          <target>Produktpersonenpreis</target>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Example Person Card - Action ProductSalesPrice - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 1673267657 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Example Person List</source>
+          <target>Beispielpersonenübersicht</target>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Example Person List - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 1673267657 - Action 2411180066 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Product Sales Price</source>
+          <target>Produktpersonenpreis</target>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Example Person List - Action ProductSalesPrice - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 508943897 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Example Product Card</source>
+          <target>Beispielproduktkarte</target>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Example Product Card - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 508943897 - Control 2445482498 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>General</source>
+          <target>Allgemein</target>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Example Product Card - Control General - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 508943897 - Action 2411180066 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Product Sales Price</source>
+          <target>Produktpersonenpreis</target>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Example Product Card - Action ProductSalesPrice - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3543363147 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Example Product List</source>
+          <target>Beispielproduktübersicht</target>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Example Product List - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3543363147 - Action 2411180066 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Product Sales Price</source>
+          <target>Produktpersonenpreis</target>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Example Product List - Action ProductSalesPrice - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 663601711 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Product Sales Prices</source>
+          <target>Produktpersonenpreise</target>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Product Sales Prices - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 4032668985 - Field 260824215 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 337631938">
           <source>Example Enabled</source>
