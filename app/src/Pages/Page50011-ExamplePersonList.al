@@ -35,6 +35,17 @@ page 50011 "Example Person List"
                 }
             }
         }
+        area(FactBoxes)
+        {
+            systempart(Links; Links)
+            {
+                ApplicationArea = RecordLinks;
+            }
+            systempart(Notes; Notes)
+            {
+                ApplicationArea = Notes;
+            }
+        }
     }
 
     actions

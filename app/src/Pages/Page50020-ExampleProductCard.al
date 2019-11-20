@@ -36,6 +36,17 @@ page 50020 "Example Product Card"
                 }
             }
         }
+        area(FactBoxes)
+        {
+            systempart(Links; Links)
+            {
+                ApplicationArea = RecordLinks;
+            }
+            systempart(Notes; Notes)
+            {
+                ApplicationArea = Notes;
+            }
+        }
     }
 
     actions

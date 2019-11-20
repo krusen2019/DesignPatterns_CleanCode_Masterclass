@@ -193,6 +193,11 @@
           <target>Beschreibung 2</target>
           <note from="Xliff Generator" annotates="general" priority="3">Table Example Product - Field Description 2 - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Table 575058549 - Field 1708449288 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Unit Price (LCY)</source>
+          <target>VK-Preis (MW)</target>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Example Product - Field Unit Price (LCY) - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Table 575058549 - Field 3543129988 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Blocked</source>
           <target>Gesperrt</target>

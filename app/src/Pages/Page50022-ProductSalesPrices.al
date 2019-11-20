@@ -25,6 +25,16 @@ page 50022 "Product Sales Prices"
                 }
             }
         }
+        area(FactBoxes)
+        {
+            systempart(Links; Links)
+            {
+                ApplicationArea = RecordLinks;
+            }
+            systempart(Notes; Notes)
+            {
+                ApplicationArea = Notes;
+            }
+        }
     }
-
 }

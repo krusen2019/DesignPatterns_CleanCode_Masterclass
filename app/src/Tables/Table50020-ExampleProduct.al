@@ -40,6 +40,12 @@ table 50020 "Example Product"
             Caption = 'Description 2';
             DataClassification = ToBeClassified;
         }
+        field(11; "Unit Price (LCY)"; Decimal)
+        {
+            Caption = 'Unit Price (LCY)';
+            DataClassification = ToBeClassified;
+            AutoFormatType = 2;
+        }
         field(51; Blocked; Boolean)
         {
             Caption = 'Blocked';
@@ -89,5 +95,19 @@ table 50020 "Example Product"
                 exit(true);
             end;
         end;
+    end;
+
+    procedure GetUnitPrice(ExamplePersonNo: Code[20]): Decimal
+    var
+        ExamplePriceMgt: Codeunit "Example Price Management";
+    begin
+        exit(ExamplePriceMgt.GetUnitPriceLCY(Rec, ExamplePersonNo));
+    end;
+
+    procedure GetUnitPrice(ExamplePerson: Record "Example Person"): Decimal
+    var
+        ExamplePriceMgt: Codeunit "Example Price Management";
+    begin
+        exit(ExamplePriceMgt.GetUnitPriceLCY(Rec, ExamplePerson));
     end;
 }
